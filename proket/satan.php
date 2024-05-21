@@ -118,6 +118,14 @@
 		<a href="index.html"><button class="btn-lgn"><i class='bx bx-user bx-xs'></i>&nbsp;Home</button></a> <!-- Home-Button -->
     </header>
     
+    <!-- Navigationsbereich -->
+    <nav>
+        <a href="#studien">Studiengänge</a> <!-- Link zu Studiengänge -->
+        <a href="#unis">Universitäten</a> <!-- Link zu Universitäten -->
+        <a href="#partner">Partneruniversitäten</a> <!-- Link zu Partneruniversitäten -->
+        <a href="#fakul">Fakultäten</a> <!-- Link zu Fakultäten -->
+		<a href="#relation">Beziehungen</a> <!-- Link zu Beziehungen -->
+    </nav>
     
     <!-- Hauptinhalt -->
     <main>
@@ -130,7 +138,7 @@
             <h2>Studiengänge</h2> <!-- Untertitel -->
 			
 			<h3> Studiengänge - Daten </h3>
-			<table border=1>
+			<table border=1px>
 				<tr>
 					<th>UNr</th>
 					<th>Name</th>
@@ -140,13 +148,11 @@
 					<th>PLZ</th>
 					<th>Stadt</th>
 					<th>Bundesland</th>
-					<th>E-Mail</th>
 				</tr>
-				
 				<?php
 				$pdo = new PDO('mysql:host=localhost;dbname=uni', 'root', '');
-				$stmt = $pdo->query('SELECT * FROM universitaeten');
-				while($row =$stmt->fetch::FETCH_ASSOC)) {
+				$sql = "SELECT * FROM Universitaeten";
+				foreach ($pdo-> query($sql) as $row) {
 					echo "<tr>";
 					echo "<td>".$row['UNr']."</td>";
 					echo "<td>".$row['Name']."</td>";
@@ -156,19 +162,27 @@
 					echo "<td>".$row['PLZ']."</td>";
 					echo "<td>".$row['Stadt']."</td>";
 					echo "<td>".$row['Bundesland']."</td>";
-					echo "<td>".$row['E-Mail']."</td>";
 					echo "</tr>";
 				}	
 					
 				?>
-		
+				</form>
 			</table>
 			
-			<h3>Bearbeiten</h3>
+			<h3> Studiengänge - Einfügen </h3>
 			<form method="post">
-				<input type="text" id="edit_id" placeholder="Nummer Studiengang">
-				<button type="submit" name="fetch_course">Studiengang bearbeiten</button>
+				<input type="text" id="new_name" placeholder="Name der Uni"><br>
+				<input type="text" id="new_jahr" placeholder="Gründungsjahr"><br>
+				<input type="text" id="new_street" placeholder="Straße"><br>
+				<input type="text" id="new_number" placeholder="Hausnummer"><br>
+				<input type="text" id="new_plz" placeholder="Postleitzahl"><br>
+				<input type="text" id="new_stadt" placeholder="Stadt"><br>
+				<input type="text" id="new_bundesland" placeholder="Bundesland"><br
 			</form>
+				
+			
+		</div>
+			
 			
 
 
