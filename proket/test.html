@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universitäten</title>
+<!-- Einbinden der Boxicons-Bibliothek für Icons -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- Vorverbindung zu Google Fonts herstellen -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Einbinden der Google Fonts 'Papyrus' -->
+<link href="https://fonts.googleapis.com/css2?family=Papyrus&display=swap" rel="stylesheet">
+<!-- Festlegen des Favicon -->
+<link rel="icon" type="image/x-icon" href="icon.png">
+<style>
+    body {
+        margin: 0; 
+        padding: 0; 
+        font-family: "Papyrus", fantasy; 
+        font-weight: 400; 
+        font-style: normal; 
+        overflow-x: hidden; 
+        background-color: #ff69b4;
+        color: #00ff00;
+        animation: blinkBody 1s infinite;
+    }
+
+    header {
+        background-color: #8b0000; 
+        display: flex; 
+        align-items: center; 
+        height: 120px; 
+        width: 100%; 
+        border-bottom: 10px dotted #ff4500; 
+        justify-content: space-between;
+        padding: 0 60px; 
+        animation: rotateHeader 1s infinite;
+    }
+
+    .btn-lgn {
+        font-size: 25px; 
+        text-align: center; 
+        height: 60px; 
+        width: 200px; 
+        margin-right: 60px;
+        border: 5px dashed #ff1493;
+        background-color: #7fff00; 
+        color: #ff00ff; 
+        border-radius: 20px; 
+        transition: all 0.2s; 
+        cursor: pointer; 
+    }
+
+    .btn-lgn:hover {
+        background-color: #ff00ff; 
+        color: #7fff00; 
+        transform: scale(1.5);
+    }
+
+    #tite-head {
+        color: #00ffff;
+        font-weight: bold; 
+        font-size: 60px;
+        text-shadow: 4px 4px #ff0000;
+    }
+
+    nav {
+        margin-top: 50px;
+        text-align: center; 
+        animation: blinkText 0.5s infinite;
+    }
+
+    nav a {
+        margin: 0 30px; 
+        text-decoration: none; 
+        color: #ff0000; 
+        font-size: 35px;
+        transition: all 0.2s; 
+    }
+
+    nav a:hover {
+        color: #0000ff; 
+        text-decoration: line-through; 
+        transform: rotate(45deg);
+    }
+
+    .content-section {
+        padding: 80px 40px; 
+        text-align: center; 
+        animation: bounceIn 2s infinite;
+    }
+
+    .content-section h2 {
+        color: #ff00ff;
+        margin-bottom: 30px;
+        font-size: 50px;
+        text-decoration: underline wavy #ff4500;
+    }
+
+    .content-section p {
+        color: #0000ff;
+        font-size: 40px;
+        line-height: 3;
+        text-transform: lowercase;
+        animation: wiggle 0.5s infinite;
+    }
+
+    #princ-pic {
+        width: 100%; 
+        max-height: 800px;
+        object-fit: contain;
+        transition: all 1s; 
+        border: 10px dashed #00ff00;
+        animation: spin 5s infinite linear;
+    }
+
+    #princ-pic:hover {
+        transform: scale(2); 
+    }
+
+    footer {
+        background-color: #8b0000; 
+        color: #ff00ff; 
+        text-align: center; 
+        padding: 60px 0;
+        width: 100%;
+        border-top: 10px dotted #ff4500;
+        position: relative;
+        animation: fadeInOut 2s infinite;
+    }
+
+    footer a {
+        color: #ff00ff; 
+        margin: 0 30px; 
+        text-decoration: underline; 
+        font-size: 30px;
+    }
+
+    footer a:hover {
+        text-decoration: none;
+        color: #00ff00;
+        transform: scale(2);
+    }
+
+    @keyframes rotateHeader {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes blinkText {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes bounceIn {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-50px);
+        }
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes fadeInOut {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes blinkBody {
+        0%, 100% {
+            background-color: #ff69b4;
+        }
+        50% {
+            background-color: #0000ff;
+        }
+    }
+
+    @keyframes wiggle {
+        0%, 100% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(5deg);
+        }
+        75% {
+            transform: rotate(-5deg);
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Header-Bereich -->
+    <header>
+        <h1 id="tite-head">Universitäten-Übersicht</h1> <!-- Titel der Seite -->
+        <a href="login.php"><button class="btn-lgn"><i class='bx bx-user bx-xs'></i>&nbsp;Login</button></a> <!-- Login-Button -->
+    </header>
+    
+    <!-- Navigationsbereich -->
+    <nav>
+        <a href="#home">Home</a> <!-- Link zu Home -->
+        <a href="#about">Über uns</a> <!-- Link zu Über uns -->
+        <a href="#courses">Kurse</a> <!-- Link zu Kurse -->
+        <a href="#contact">Kontakt</a> <!-- Link zu Kontakt -->
+    </nav>
+    
+    <!-- Hauptinhalt -->
+    <main>
+        <div class="content-section" id="home">
+            <img id="princ-pic" src="bg.jpg" alt="bild"> <!-- Hauptbild -->
+        </div>
+        <div class="content-section" id="about">
+            <h2>Über uns</h2> <!-- Untertitel -->
+            <p>Willkommen bei der Universitäten-Übersicht. Unsere Plattform bietet detaillierte Informationen zu verschiedenen Universitäten weltweit, einschließlich ihrer Kurse, Campusleben und mehr. Entdecken Sie die besten Bildungsinstitutionen und finden Sie die perfekte Universität für Ihre Bedürfnisse.</p>
+        </div>
+        <div class="content-section" id="courses">
+            <h2>Kurse</h2> <!-- Untertitel -->
+            <p>Erkunden Sie eine Vielzahl von Kursen, die von führenden Universitäten angeboten werden. Von Ingenieurwissenschaften über Geisteswissenschaften bis hin zu den Naturwissenschaften – wir bieten eine breite Palette an Kursen, die Ihren akademischen Interessen und Karrierezielen entsprechen.</p>
+        </div>
+        <div class="content-section" id="contact">
+            <h2>Kontakt</h2> <!-- Untertitel -->
+            <p>Haben Sie Fragen oder benötigen Sie weitere Informationen? Kontaktieren Sie uns per E-Mail oder Telefon, und unser freundliches Team hilft Ihnen gerne weiter. Wir freuen uns darauf, von Ihnen zu hören!</p>
+        </div>
+    </main>
+    
+    <!-- Footer-Bereich -->
+    <footer>
+        <p>&copy; 2024 Universitäten-Übersicht</p> <!-- Copyright -->
+        <a href="#">Impressum</a> <!-- Link zu Impressum -->
+        <a href="#">Datenschutz</a> <!-- Link zu Datenschutz -->
+    </footer>
+    
+    <script>
+        // Verwirrendes JavaScript für blinkenden Bildschirm
+        let colors = ['#ff69b4', '#0000ff', '#7fff00', '#ff4500'];
+        setInterval(function() {
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }, 100);
+
+        console.log("Hallo Welt!"); // Verwirrende Konsolenausgabe
+    </script>
+</body>
+</html>
