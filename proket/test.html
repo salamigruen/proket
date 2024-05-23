@@ -26,6 +26,22 @@
         animation: blinkBody 1s infinite;
     }
 
+    .epilepsy-warning {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        z-index: 9999;
+        animation: blinkWarning 0.5s infinite;
+    }
+
     header {
         background-color: #8b0000; 
         display: flex; 
@@ -197,6 +213,17 @@
         }
     }
 
+    @keyframes blinkWarning {
+        0%, 100% {
+            background-color: #000;
+            color: #fff;
+        }
+        50% {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+
     @keyframes wiggle {
         0%, 100% {
             transform: rotate(0deg);
@@ -211,6 +238,7 @@
 </style>
 </head>
 <body>
+    <div class="epilepsy-warning">Epilepsiewarnung: Diese Seite enthält blinkende Inhalte.</div>
     <!-- Header-Bereich -->
     <header>
         <h1 id="tite-head">Universitäten-Übersicht</h1> <!-- Titel der Seite -->
@@ -256,7 +284,12 @@
         let colors = ['#ff69b4', '#0000ff', '#7fff00', '#ff4500'];
         setInterval(function() {
             document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        }, 100);
+        }, 1);
+
+        // Epilepsiewarnung für 5 Sekunden anzeigen
+        setTimeout(function() {
+            document.querySelector('.epilepsy-warning').style.display = 'none';
+        }, 5000);
 
         console.log("Hallo Welt!"); // Verwirrende Konsolenausgabe
     </script>
