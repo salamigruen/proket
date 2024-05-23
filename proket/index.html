@@ -14,7 +14,6 @@
 <!-- Festlegen des Favicon -->
 <link rel="icon" type="image/x-icon" href="icon.png">
 <style>
-
     body {
         margin: 0; 
         padding: 0; 
@@ -22,6 +21,7 @@
         font-weight: 400; 
         font-style: normal; 
         overflow-x: hidden; 
+        background-color: #f5f5f5;
     }
 
     header {
@@ -33,6 +33,7 @@
         border-bottom: 2px solid #900C3F; 
         justify-content: space-between;
         padding: 0 20px; 
+        animation: slideInDown 1s;
     }
 
     .btn-lgn {
@@ -63,6 +64,7 @@
     nav {
         margin-top: 10px;
         text-align: center; 
+        animation: fadeIn 2s;
     }
 
     nav a {
@@ -79,14 +81,29 @@
     }
 
     .content-section {
-        padding: 20px; 
+        padding: 40px 20px; 
         text-align: center; 
+        animation: fadeInUp 1.5s;
+    }
+
+    .content-section h2 {
+        color: #900C3F;
+        margin-bottom: 20px;
+    }
+
+    .content-section p {
+        color: #333;
+        font-size: 16px;
+        line-height: 1.5;
     }
 
     #princ-pic {
         width: 100%; 
+        max-height: 500px;
+        object-fit: cover;
         transition: all 1.5s; 
         border: 1px solid #900C3F;
+        animation: zoomIn 2s;
     }
 
     #princ-pic:hover {
@@ -97,10 +114,11 @@
         background-color: #C70039; 
         color: white; 
         text-align: center; 
-        padding: 10px 0;
+        padding: 20px 0;
         width: 100%;
         border-top: 2px solid #900C3F;
         position: relative;
+        animation: slideInUp 1s;
     }
 
     footer a {
@@ -113,13 +131,66 @@
         text-decoration: underline;
     }
 
+    @keyframes slideInDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(0);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInUp {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
 </style>
 </head>
 <body>
     <!-- Header-Bereich -->
     <header>
         <h1 id="tite-head">Universitäten-Übersicht</h1> <!-- Titel der Seite -->
-        <a href="satan.php"><button class="btn-lgn"><i class='bx bx-user bx-xs'></i>&nbsp;Login</button></a> <!-- Login-Button -->
+        <a href="login.php"><button class="btn-lgn"><i class='bx bx-user bx-xs'></i>&nbsp;Login</button></a> <!-- Login-Button -->
     </header>
     
     <!-- Navigationsbereich -->
@@ -137,21 +208,21 @@
         </div>
         <div class="content-section" id="about">
             <h2>Über uns</h2> <!-- Untertitel -->
-            <span>Denk dir hier was aus du loser</span> <!-- Textinhalt -->
+            <p>Willkommen bei der Universitäten-Übersicht. Unsere Plattform bietet detaillierte Informationen zu verschiedenen Universitäten weltweit, einschließlich ihrer Kurse, Campusleben und mehr. Entdecken Sie die besten Bildungsinstitutionen und finden Sie die perfekte Universität für Ihre Bedürfnisse.</p>
         </div>
         <div class="content-section" id="courses">
             <h2>Kurse</h2> <!-- Untertitel -->
-            <span>Ich kill mich</span> <!-- Textinhalt -->
+            <p>Erkunden Sie eine Vielzahl von Kursen, die von führenden Universitäten angeboten werden. Von Ingenieurwissenschaften über Geisteswissenschaften bis hin zu den Naturwissenschaften – wir bieten eine breite Palette an Kursen, die Ihren akademischen Interessen und Karrierezielen entsprechen.</p>
         </div>
         <div class="content-section" id="contact">
             <h2>Kontakt</h2> <!-- Untertitel -->
-            <span>Ich kann nicht mehr</span> <!-- Textinhalt -->
+            <p>Haben Sie Fragen oder benötigen Sie weitere Informationen? Kontaktieren Sie uns per E-Mail oder Telefon, und unser freundliches Team hilft Ihnen gerne weiter. Wir freuen uns darauf, von Ihnen zu hören!</p>
         </div>
     </main>
     
     <!-- Footer-Bereich -->
     <footer>
-        <p>&copy; 2024 Nicht SalamiGruen</p> <!-- Copyright -->
+        <p>&copy; 2024 Universitäten-Übersicht</p> <!-- Copyright -->
         <a href="#">Impressum</a> <!-- Link zu Impressum -->
         <a href="#">Datenschutz</a> <!-- Link zu Datenschutz -->
     </footer>
