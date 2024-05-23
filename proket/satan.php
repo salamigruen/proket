@@ -18,15 +18,16 @@
         font-weight: 400; 
         font-style: normal; 
         overflow-x: hidden; 
+        background-color: #f8f9fa;
     }
 
     header {
-        background-color: #C70039; 
+        background-color: #343a40; 
         display: flex; 
         align-items: center;
         height: 80px;
         width: 100%;
-        border-bottom: 2px solid #900C3F; 
+        border-bottom: 2px solid #495057; 
         justify-content: space-between; 
         padding: 0 20px;
     }
@@ -38,7 +39,7 @@
         width: 80px; 
         margin-right: 40px; 
         border: none; 
-        background-color: #900C3F; 
+        background-color: #dc3545; 
         color: white; 
         border-radius: 3px; 
         transition: all 0.3s; 
@@ -46,8 +47,7 @@
     }
 
     .btn-lgn:hover {
-        background-color: white; 
-        color: #900C3F; 
+        background-color: #bd2130; 
     }
 
     #tite-head {
@@ -64,38 +64,32 @@
     nav a {
         margin: 0 15px; 
         text-decoration: none;
-        color: #C70039; 
+        color: #007bff; 
         font-size: 18px; 
         transition: all 0.3s; 
     }
 
     nav a:hover {
-        color: #900C3F; 
+        color: #0056b3; 
         text-decoration: underline; 
     }
 
     .content-section {
         padding: 20px; 
         text-align: center; 
-    }
-
-    #princ-pic {
-        width: 100%; 
-        transition: all 1.5s; 
-        border: 1px solid #900C3F; 
-    }
-
-    #princ-pic:hover {
-        transform: scale(1.015); 
+        background-color: white; 
+        border-radius: 5px; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        margin-bottom: 20px; 
     }
 
     footer {
-        background-color: #C70039;
+        background-color: #343a40;
         color: white; 
         text-align: center; 
         padding: 10px 0; 
         width: 100%; 
-        border-top: 2px solid #900C3F; 
+        border-top: 2px solid #495057; 
         position: relative; 
     }
 
@@ -112,91 +106,78 @@
 </style>
 </head>
 <body>
-    <!-- Header-Bereich -->
     <header>
-        <h1 id="tite-head">Universitäten-Übersicht - Admin-Panel</h1> <!-- Titel der Seite -->
-		<a href="index.html"><button class="btn-lgn"><i class='bx bx-user bx-xs'></i>&nbsp;Home</button></a> <!-- Home-Button -->
+        <h1 id="tite-head">Universitäten-Übersicht - Admin-Panel</h1> 
+		<a href="index.html"><button class="btn-lgn"><i class='bx bx-user bx-xs'></i>&nbsp;Home</button></a> 
     </header>
     
-    <!-- Navigationsbereich -->
     <nav>
-        <a href="#studien">Studiengänge</a> <!-- Link zu Studiengänge -->
-        <a href="#unis">Universitäten</a> <!-- Link zu Universitäten -->
-        <a href="#partner">Partneruniversitäten</a> <!-- Link zu Partneruniversitäten -->
-        <a href="#fakul">Fakultäten</a> <!-- Link zu Fakultäten -->
-		<a href="#relation">Beziehungen</a> <!-- Link zu Beziehungen -->
+        <a href="#studien">Studiengänge</a> 
+        <a href="#unis">Universitäten</a> 
+        <a href="#partner">Partneruniversitäten</a> 
+        <a href="#fakul">Fakultäten</a> 
+        <a href="#relation">Beziehungen</a> 
     </nav>
     
-    <!-- Hauptinhalt -->
     <main>
         <div class="content-section" id="about">
-            <h2>Information</h2> <!-- Untertitel -->
-            <span>Zugriffsseite für Admins. Hier kann man Daten einfügen oder löschen.</span> <!-- Textinhalt -->
+            <h2>Information</h2> 
+            <span>Zugriffsseite für Admins. Hier kann man Daten einfügen oder löschen.</span> 
         </div>
-		
-		<div class="content-section" id="studien">
-            <h2>Studiengänge</h2> <!-- Untertitel -->
-			
-			<h3> Studiengänge - Daten </h3>
-			<table border=1px>
-				<tr>
-					<th>UNr</th>
-					<th>Name</th>
-					<th>Gründungsjahr</th>
-					<th>Straße</th>
-					<th>Hausnummer</th>
-					<th>PLZ</th>
-					<th>Stadt</th>
-					<th>Bundesland</th>
-				</tr>
-				<?php
-				$pdo = new PDO('mysql:host=localhost;dbname=uni', 'root', '');
-				$sql = "SELECT * FROM Universitaeten";
-				foreach ($pdo-> query($sql) as $row) {
-					echo "<tr>";
-					echo "<td>".$row['UNr']."</td>";
-					echo "<td>".$row['Name']."</td>";
-					echo "<td>".$row['Gruendungsjahr']."</td>";
-					echo "<td>".$row['Straße']."</td>";
-					echo "<td>".$row['Hausnummer']."</td>";
-					echo "<td>".$row['PLZ']."</td>";
-					echo "<td>".$row['Stadt']."</td>";
-					echo "<td>".$row['Bundesland']."</td>";
-					echo "</tr>";
-				}	
-					
-				?>
-				</form>
-			</table>
-			
-			<h3> Studiengänge - Einfügen </h3>
-			<form method="post">
-				<input type="text" id="new_name" placeholder="Name der Uni"><br>
-				<input type="text" id="new_jahr" placeholder="Gründungsjahr"><br>
-				<input type="text" id="new_street" placeholder="Straße"><br>
-				<input type="text" id="new_number" placeholder="Hausnummer"><br>
-				<input type="text" id="new_plz" placeholder="Postleitzahl"><br>
-				<input type="text" id="new_stadt" placeholder="Stadt"><br>
-				<input type="text" id="new_bundesland" placeholder="Bundesland"><br
-			</form>
-				
-			
-		</div>
-			
-			
-
-
+        
+        <div class="content-section" id="studien">
+            <h2>Studiengänge</h2> 
+            
+            <h3> Studiengänge - Daten </h3>
+            <table border=1px>
+                <tr>
+                    <th>UNr</th>
+                    <th>Name</th>
+                    <th>Gründungsjahr</th>
+                    <th>Straße</th>
+                    <th>Hausnummer</th>
+                    <th>PLZ</th>
+                    <th>Stadt</th>
+                    <th>Bundesland</th>
+                </tr>
+                <?php
+                $pdo = new PDO('mysql:host=localhost;dbname=uni', 'root', '');
+                $sql = "SELECT * FROM Universitaeten";
+                foreach ($pdo-> query($sql) as $row) {
+                    echo "<tr>";
+                    echo "<td>".$row['UNr']."</td>";
+                    echo "<td>".$row['Name']."</td>";
+                    echo "<td>".$row['Gruendungsjahr']."</td>";
+                    echo "<td>".$row['Straße']."</td>";
+                    echo "<td>".$row['Hausnummer']."</td>";
+                    echo "<td>".$row['PLZ']."</td>";
+                    echo "<td>".$row['Stadt']."</td>";
+                    echo "<td>".$row['Bundesland']."</td>";
+                    echo "</tr>";
+                }    
+                ?>
+                </form>
+            </table>
+            
+            <h3> Studiengänge - Einfügen </h3>
+            <form method="post">
+                <input type="text" id="new_name" placeholder="Name der Uni"><br>
+                <input type="text" id="new_jahr" placeholder="Gründungsjahr"><br>
+                <input type="text" id="new_street" placeholder="Straße"><br>
+                <input type="text" id="new_number" placeholder="Hausnummer"><br>
+                <input type="text" id="new_plz" placeholder="Postleitzahl"><br>
+                <input type="text" id="new_stadt" placeholder="Stadt"><br>
+                <input type="text" id="new_bundesland" placeholder="Bundesland"><br>
+            </form>
+                
+            
+        </div>
     </main>
     
-    <!-- Footer-Bereich -->
     <footer>
-        <p>&copy; 2024 </p> <!-- Copyright -->
-        <a href="#">Impressum</a> <!-- Link zu Impressum -->
-        <a href="#">Datenschutz</a> <!-- Link zu Datenschutz -->
+        <p>&copy; 2024 </p> 
+        <a href="#">Impressum</a> 
+        <a href="#">Datenschutz</a> 
     </footer>
-    
-    <script>
-        console.log(2 + 2); // Konsolenausgabe für Debugging 
-    </script>
 </body>
 </html>
