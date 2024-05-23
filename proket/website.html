@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universitäten</title>
+<!-- Einbinden der Boxicons-Bibliothek für Icons -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- Vorverbindung zu Google Fonts herstellen -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Einbinden der Google Fonts 'Comic Sans MS' -->
+<link href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap" rel="stylesheet">
+<!-- Festlegen des Favicon -->
+<link rel="icon" type="image/x-icon" href="icon.png">
+<style>
+    body {
+        margin: 0; 
+        padding: 0; 
+        font-family: "Comic Sans MS", cursive; 
+        font-weight: 400; 
+        font-style: normal; 
+        overflow-x: hidden; 
+        background-color: #ffcc00;
+        color: #ff00ff;
+    }
+
+    header {
+        background-color: #00ff00; 
+        display: flex; 
+        align-items: center; 
+        height: 100px; 
+        width: 100%; 
+        border-bottom: 5px solid #0000ff; 
+        justify-content: space-between;
+        padding: 0 50px; 
+        animation: rotateHeader 2s infinite;
+    }
+
+    .btn-lgn {
+        font-size: 20px; 
+        text-align: center; 
+        height: 50px; 
+        width: 150px; 
+        margin-right: 50px;
+        border: 3px dashed #ff0000;
+        background-color: #00ffff; 
+        color: #0000ff; 
+        border-radius: 50px; 
+        transition: all 0.5s; 
+        cursor: pointer; 
+    }
+
+    .btn-lgn:hover {
+        background-color: #ff0000; 
+        color: #00ffff; 
+        transform: rotate(360deg);
+    }
+
+    #tite-head {
+        color: #0000ff;
+        font-weight: bold; 
+        font-size: 50px;
+        text-shadow: 2px 2px #ff0000;
+    }
+
+    nav {
+        margin-top: 30px;
+        text-align: center; 
+        animation: blinkText 1s infinite;
+    }
+
+    nav a {
+        margin: 0 30px; 
+        text-decoration: underline; 
+        color: #ff0000; 
+        font-size: 30px;
+        transition: all 0.5s; 
+    }
+
+    nav a:hover {
+        color: #00ff00; 
+        text-decoration: line-through; 
+        transform: scale(1.5);
+    }
+
+    .content-section {
+        padding: 60px 40px; 
+        text-align: center; 
+        animation: bounceIn 3s infinite;
+    }
+
+    .content-section h2 {
+        color: #00ffff;
+        margin-bottom: 30px;
+        font-size: 40px;
+        text-decoration: underline wavy #ff00ff;
+    }
+
+    .content-section p {
+        color: #ff00ff;
+        font-size: 30px;
+        line-height: 2;
+        text-transform: uppercase;
+    }
+
+    #princ-pic {
+        width: 100%; 
+        max-height: 700px;
+        object-fit: contain;
+        transition: all 2s; 
+        border: 5px dotted #ff0000;
+        animation: spin 10s infinite linear;
+    }
+
+    #princ-pic:hover {
+        transform: scale(1.5); 
+    }
+
+    footer {
+        background-color: #00ff00; 
+        color: #ff00ff; 
+        text-align: center; 
+        padding: 40px 0;
+        width: 100%;
+        border-top: 5px solid #0000ff;
+        position: relative;
+        animation: fadeInOut 3s infinite;
+    }
+
+    footer a {
+        color: #ff00ff; 
+        margin: 0 20px; 
+        text-decoration: underline; 
+        font-size: 20px;
+    }
+
+    footer a:hover {
+        text-decoration: none;
+        color: #0000ff;
+    }
+
+    @keyframes rotateHeader {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes blinkText {
+        0%, 50%, 100% {
+            opacity: 1;
+        }
+        25%, 75% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes bounceIn {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes fadeInOut {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
+</style>
+</head>
+<body>
+    <!-- Header-Bereich -->
+    <header>
+        <h1 id="tite-head">Universitäten-Übersicht</h1> <!-- Titel der Seite -->
+        <a href="login.php"><button class="btn-lgn"><i class='bx bx-user bx-xs'></i>&nbsp;Login</button></a> <!-- Login-Button -->
+    </header>
+    
+    <!-- Navigationsbereich -->
+    <nav>
+        <a href="#home">Home</a> <!-- Link zu Home -->
+        <a href="#about">Über uns</a> <!-- Link zu Über uns -->
+        <a href="#courses">Kurse</a> <!-- Link zu Kurse -->
+        <a href="#contact">Kontakt</a> <!-- Link zu Kontakt -->
+    </nav>
+    
+    <!-- Hauptinhalt -->
+    <main>
+        <div class="content-section" id="home">
+            <img id="princ-pic" src="bg.jpg" alt="bild"> <!-- Hauptbild -->
+        </div>
+        <div class="content-section" id="about">
+            <h2>Über uns</h2> <!-- Untertitel -->
+            <p>Willkommen bei der Universitäten-Übersicht. Unsere Plattform bietet detaillierte Informationen zu verschiedenen Universitäten weltweit, einschließlich ihrer Kurse, Campusleben und mehr. Entdecken Sie die besten Bildungsinstitutionen und finden Sie die perfekte Universität für Ihre Bedürfnisse.</p>
+        </div>
+        <div class="content-section" id="courses">
+            <h2>Kurse</h2> <!-- Untertitel -->
+            <p>Erkunden Sie eine Vielzahl von Kursen, die von führenden Universitäten angeboten werden. Von Ingenieurwissenschaften über Geisteswissenschaften bis hin zu den Naturwissenschaften – wir bieten eine breite Palette an Kursen, die Ihren akademischen Interessen und Karrierezielen entsprechen.</p>
+        </div>
+        <div class="content-section" id="contact">
+            <h2>Kontakt</h2> <!-- Untertitel -->
+            <p>Haben Sie Fragen oder benötigen Sie weitere Informationen? Kontaktieren Sie uns per E-Mail oder Telefon, und unser freundliches Team hilft Ihnen gerne weiter. Wir freuen uns darauf, von Ihnen zu hören!</p>
+        </div>
+    </main>
+    
+    <!-- Footer-Bereich -->
+    <footer>
+        <p>&copy; 2024 Universitäten-Übersicht</p> <!-- Copyright -->
+        <a href="#">Impressum</a> <!-- Link zu Impressum -->
+        <a href="#">Datenschutz</a> <!-- Link zu Datenschutz -->
+    </footer>
+    
+    <script>
+        console.log(2 + 2); // Konsolenausgabe für Debugging 
+    </script>
+</body>
+</html>
