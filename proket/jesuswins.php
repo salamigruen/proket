@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CRUD-Anwendung</title>
+    <title>Ich hau dir eine in die Fresse du Hurensohn</title>
     <style>
         body {
             font-family: Arial, sans-serif;
