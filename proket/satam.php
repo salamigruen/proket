@@ -14,7 +14,7 @@
             font-family: 'Montserrat', sans-serif;
             background: linear-gradient(135deg, #ff4e50, #f9d423);
             color: white;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-x: hidden; 
         }
         header {
             display: flex;
